@@ -63,6 +63,7 @@ background-color: rgba(128, 128, 128, 0.089);
   width: ${(props) => props.$sideBarWidth}px;
   overflow: hidden;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 `
 
@@ -310,7 +311,7 @@ function App() {
                     )}
                   </div>
                 </Sidebar>
-                <div className="bar" ref={barRef} style={{left : `${barPosition}px`}} onClick={() => setBar(!bar)}>
+                <div className="bar" role="button" tabIndex="0"  ref={barRef} style={{left : `${barPosition}px`}} onClick={() => setBar(!bar)}>
                     <img src={barArrow} alt="사이드 바 이미지" />
                 </div>
 
