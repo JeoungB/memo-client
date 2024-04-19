@@ -1,0 +1,17 @@
+@media (max-width : 760px) {
+    .important-memo-page .alert {
+        left: 35%;
+    }
+}
+
+@media (max-width : 600px) {
+    .important-memo-page .alert {
+        left: 30%;
+    }
+}
+
+@media (max-width : 360px) {
+    .important-memo-page .alert {
+        left: 25%;
+    }
+}

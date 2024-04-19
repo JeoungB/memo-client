@@ -1,0 +1,41 @@
+@media (max-width : 760px) {
+    .homepage {
+        width : 100%;
+    }
+}
+
+@media (max-width : 650px) {
+    .content-box .content-container {
+        width: 600px;
+    }
+}
+
+@media (max-width : 600px) {
+    .content-box .content-container {
+        width: 100vw;
+    }
+
+    .tag {
+        width: 110vw;
+    }
+
+    .addmemo {
+        position: relative;
+        right: 10%;
+    }
+}
+
+@media (max-width : 360px) {
+    .content-box .content-container {
+        min-width: 295px;
+    }
+
+    .tag {
+        width: 600px;
+    }
+
+    .addmemo {
+        position: relative;
+        left: -230px;
+    }
+}

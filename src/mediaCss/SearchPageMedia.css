@@ -1,0 +1,17 @@
+@media (max-width : 760px) {
+    .searchpage .alert {
+        left: 30%;
+    }
+}
+
+@media (max-width : 500px) {
+    .searchpage .alert {
+        left: 25%;
+    }
+}
+
+@media (max-width : 360px) {
+    .searchpage .alert {
+        left: 50px;
+    }
+}

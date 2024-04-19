@@ -1,0 +1,61 @@
+.today .main h2 {
+    position: relative;
+    left: -20px;
+}
+
+.today .main h2 {
+    pointer-events: none;
+}
+
+.today .main .tag {
+    pointer-events: none;
+}
+
+.today .content-box h2 {
+    position: relative;
+    left: 30px;
+}
+
+.today .content-box {
+    height: 0;
+}
+
+.today .content-box:hover {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.today .main .addmemo {
+    display: none;
+}
+
+.today .homepage {
+    height: 0;
+}
+
+.today .content h2 {
+    text-transform: none;
+}
+
+.today .alert {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 26px;
+    pointer-events: none;
+}
+
+.today .not-today-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.today .alert p {
+    position: relative;
+    top: -150px;
+}

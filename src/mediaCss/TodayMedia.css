@@ -1,0 +1,25 @@
+@media (max-width : 760px) {
+    .today .alert {
+        left: 35%;
+    }
+}
+
+@media (max-width : 600px) {
+    .today .alert {
+        left: 30%;
+    }
+
+    .today .alert p {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width : 360px) {
+    .today .alert {
+        left: 25%;
+    }
+
+    .today .alert p {
+        font-size: 20px;
+    }
+}

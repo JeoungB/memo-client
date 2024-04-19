@@ -1,0 +1,71 @@
+/* 태블릿 */
+@media (max-width : 760px) {
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        z-index: 31;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .modal .color {
+        left: 63%;
+    }
+
+    .modal input {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width : 600px) {
+    .modal {
+        width: 80vw;
+        height: 82vw;
+    }
+
+    .modal .color {
+        left: 60%;
+    }
+
+    .modal h1 {
+        font-size: 6vw;
+    }
+
+    .modal input {
+        font-size: 2.5vw;
+    }
+
+    .modal .project-color-tag  {
+        position: absolute;
+        top: 12%;
+    }
+}
+
+/* 모바일 */
+@media (max-width : 360px) {
+    .modal {
+        min-width: 300px;
+        height: 350px;
+    }
+
+    .modal .color {
+        left: 60%;
+    }
+
+    .modal input {
+        font-size: 10px;
+    }
+
+    .modal .color {
+        left: 30%;
+    }
+
+    .modal .project-color-tag  {
+        position: absolute;
+        top: 40px;
+    }
+}

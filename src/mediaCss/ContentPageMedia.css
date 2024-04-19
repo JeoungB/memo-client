@@ -1,0 +1,53 @@
+@media (max-width : 760px) {
+    .main-content {
+        top: 206px;
+        left: 0;
+        margin : -73px 0 0 40px;
+    }
+
+    .main-content .tag {
+        width: 100%;
+      }
+
+      .viwer {
+        width: 90vw;
+    }
+
+    .menu-container {
+        margin-right: 0px;
+    }
+
+    .menu-container .menu {
+        right: 20%;
+    }
+}
+
+@media (max-width : 600px) {
+    .viwer {
+        width: 85vw;
+    }
+
+    .main-content .tag {
+        width: 85vw;
+    }
+
+    .menu-icon {
+        position: relative;
+        left: 12vw;
+    }
+}
+
+@media (max-width : 360px) {
+    .viwer {
+        width: 300px;
+    }
+
+    .main-content .tag {
+        width: 300px;
+    }
+
+    .menu-icon {
+        position: relative;
+        left: 55px;
+    }
+}
