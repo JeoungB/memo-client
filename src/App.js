@@ -62,8 +62,7 @@ background-color: rgba(128, 128, 128, 0.089);
 @media (max-width : 760px) {
   width: ${(props) => props.$sideBarWidth}px;
   overflow: hidden;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgb(172, 172, 172);
 }
 `
 
