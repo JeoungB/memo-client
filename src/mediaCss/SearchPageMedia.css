@@ -6,12 +6,16 @@
 
 @media (max-width : 500px) {
     .searchpage .alert {
-        left: 25%;
+        left: 23vw;
     }
 }
 
 @media (max-width : 360px) {
     .searchpage .alert {
-        left: 50px;
+        left: 13%;
+    }
+
+    .searchpage .alert p {
+        font-size: 8vw;
     }
 }

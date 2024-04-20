@@ -12,7 +12,6 @@
 
 @media (max-width : 360px) {
     .select-modal {
-        width: 280px;
-        left: 175px;
+        width: 80%;
     }
 }

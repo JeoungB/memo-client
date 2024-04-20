@@ -17,9 +17,8 @@ const AddProject = () => {
   const [colorModal, setColorModal] = useState(false);
   const pikerRef = useRef(null);
   const pikerStateRef = useRef(false);
-  const titleInputRef = useRef();
   const darkMode = useSelector((state) => state.darkMode);
-  const TEXT_LENGHT = /^.{0,20}$/;
+  const TEXT_LENGHT = /^.{0,15}$/;
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,10 +28,6 @@ const AddProject = () => {
         pikerStateRef.current = false;
       }
     })
-  }, []);
-
-  useEffect(() => {
-    titleInputRef.current.focus();
   }, []);
 
   const createNewGroup = () => {
@@ -110,29 +105,28 @@ const AddProject = () => {
 
         {titleWarning ? (
           <p className="modal-p1">
-            <span>*</span>그룹 제목을 작성해주세요 (공백X, 20자 이내)
+            <span>*</span>그룹 제목을 작성해주세요 (공백X, 15자 이내)
           </p>
         ) : null}
         <input
           className="project-title"
           type="text"
           name="title"
-          ref={titleInputRef}
           style={{ backgroundColor: darkMode ? "white" : "" }}
-          placeholder="&nbsp;&nbsp;&nbsp;그룹 제목을 적어주세요 (0 ~ 20자)"
+          placeholder="&nbsp;&nbsp;&nbsp;그룹 제목을 적어주세요 (0 ~ 15자)"
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         ></input>
         {subtitleWarning ? (
-          <p className="modal-p2">20자 이내로 작성해주세요</p>
+          <p className="modal-p2">15자 이내로 작성해주세요</p>
         ) : null}
         <input
           className="sub-title"
           type="text"
           name="sub-title"
           style={{ backgroundColor: darkMode ? "white" : "" }}
-          placeholder="&nbsp;&nbsp;&nbsp;그룹의 설명을 적어주세요 (0 ~ 20자)"
+          placeholder="&nbsp;&nbsp;&nbsp;설명을 적어주세요 (0 ~ 15자)"
           onChange={(e) => {
             setSubTitle(e.target.value);
           }}

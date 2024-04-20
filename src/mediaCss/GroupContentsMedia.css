@@ -34,4 +34,8 @@
     .main h2 {
         font-size: 20px;
     }
+
+    .group-menus {
+        left: 10%;
+    }
 }

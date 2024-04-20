@@ -45,7 +45,7 @@
 
   @media (max-width : 360px) {
     .search {
-        width: 200px;
+        width: 50vw;
         top: 20px;
         left: 120px;
       }

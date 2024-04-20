@@ -100,104 +100,113 @@ const HomePage = (props) => {
             + Addmemo
           </p>
         </div>
-        <div className="content-box">
-          {memo.map((memoList) => {
-            return (
-              <div
-                className="content-container"
-                key={memoList.id}
-                draggable="true"
-              >
+        {
+          Array.isArray(memoList) && memoList.length === 0 ? (
+            <div className="none-memo">
+            <p>메모가 없어요</p>
+            <p>메모를 추가해보세요</p>
+            </div>
+          ) : (
+            <div className="content-box">
+            {memo.map((memoList) => {
+              return (
                 <div
-                  className="content"
-                  onClick={(e) => {
-                    navigate(`/content/${memoList.id}`);
-                  }}
+                  className="content-container"
+                  key={memoList.id}
+                  draggable="true"
                 >
                   <div
-                    className="memo-color"
-                    style={{ backgroundColor: `${memoList.color}` }}
-                  ></div>
-                  <h2>{memoList.title}</h2>
-                  <div
-                    className="subtitle"
-                    style={{
-                      backgroundColor: darkMode
-                        ? "gray"
-                        : "rgba(167, 166, 166, 0.373)",
-                      display: memoList.subTitle ? "" : "none",
+                    className="content"
+                    onClick={(e) => {
+                      navigate(`/content/${memoList.id}`);
                     }}
                   >
-                    {memoList.subTitle}
+                    <div
+                      className="memo-color"
+                      style={{ backgroundColor: `${memoList.color}` }}
+                    ></div>
+                    <h2>{memoList.title}</h2>
+                    <div
+                      className="subtitle"
+                      style={{
+                        backgroundColor: darkMode
+                          ? "gray"
+                          : "rgba(167, 166, 166, 0.373)",
+                        display: memoList.subTitle ? "" : "none",
+                      }}
+                    >
+                      {memoList.subTitle}
+                    </div>
+                  </div>
+                  <div
+                    className="memo-menu"
+                    onClick={() => {
+                      navigate(`/content/${memoList.id}`);
+                    }}
+                  >
+                    <p className="memo-date">{memoList.date}</p>
+                    {
+                      memoList.modify ? (
+                        <p style={{fontSize : '14px'}}>수정됨</p>
+                      ) : null
+                    }
+                    <i
+                      className="fa-solid fa-trash-can"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        let result = window.confirm(
+                          `${memoList.title}을 삭제하시겠습니까?`
+                        );
+                        if (result) {
+                          dispatch(deleteMemo(memoList.id));
+                        }
+                      }}
+                    ></i>
+                    <i
+                      className="fa-solid fa-pen-to-square"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/modify/${memoList.id}`);
+                      }}
+                    ></i>
+                    <div className="important">
+                      {memoList.important ? (
+                        <img
+                          alt="important-star"
+                          className="star"
+                          src={yellowStar}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleImportant(memoList.id);
+                          }}
+                        />
+                      ) : darkMode ? (
+                        <i
+                          className="fa-solid fa-star"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleImportant(memoList.id);
+                          }}
+                        ></i>
+                      ) : (
+                        <img
+                          alt="important-star"
+                          className="star"
+                          src={star}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleImportant(memoList.id);
+                          }}
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
-                <div
-                  className="memo-menu"
-                  onClick={() => {
-                    navigate(`/content/${memoList.id}`);
-                  }}
-                >
-                  <p className="memo-date">{memoList.date}</p>
-                  {
-                    memoList.modify ? (
-                      <p style={{fontSize : '14px'}}>수정됨</p>
-                    ) : null
-                  }
-                  <i
-                    className="fa-solid fa-trash-can"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      let result = window.confirm(
-                        `${memoList.title}을 삭제하시겠습니까?`
-                      );
-                      if (result) {
-                        dispatch(deleteMemo(memoList.id));
-                      }
-                    }}
-                  ></i>
-                  <i
-                    className="fa-solid fa-pen-to-square"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/modify/${memoList.id}`);
-                    }}
-                  ></i>
-                  <div className="important">
-                    {memoList.important ? (
-                      <img
-                        alt="important-star"
-                        className="star"
-                        src={yellowStar}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleImportant(memoList.id);
-                        }}
-                      />
-                    ) : darkMode ? (
-                      <i
-                        className="fa-solid fa-star"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleImportant(memoList.id);
-                        }}
-                      ></i>
-                    ) : (
-                      <img
-                        alt="important-star"
-                        className="star"
-                        src={star}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleImportant(memoList.id);
-                        }}
-                      />
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+          )
+        }
         {scrollModal ? (
           <div
             className="scroll-button"

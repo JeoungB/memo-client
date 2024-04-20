@@ -62,7 +62,8 @@ background-color: rgba(128, 128, 128, 0.089);
 @media (max-width : 760px) {
   width: ${(props) => props.$sideBarWidth}px;
   overflow: hidden;
-  background-color: rgb(172, 172, 172);
+  background-color : ${(props) => props.$darkMode ? "#2B2B2B" : "rgb(233, 233, 233);"
+  }
 }
 `
 
@@ -95,25 +96,25 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('click', (e) => {
-      if(!sidebarRef.current.contains(e.target) && !barRef.current.contains(e.target)) {
+      if (!sidebarRef.current.contains(e.target) && !barRef.current.contains(e.target)) {
         setBar(false);
         setSideBarWidth(0);
         setBarPosition(0);
       }
     });
 
-    return() => {
-      window.addEventListener('click' , () => {});
+    return () => {
+      window.addEventListener('click', () => { });
     }
   }, []);
 
   useEffect(() => {
-    if(bar === false) {
+    if (bar === false) {
       setSideBarWidth(0);
       setBarPosition(0);
     }
 
-    if(bar === true) {
+    if (bar === true) {
       setSideBarWidth(200);
       setBarPosition(200);
     }
@@ -217,7 +218,7 @@ function App() {
               </header>
 
               <div className="main-container">
-                <Sidebar className="sidebar" ref={sidebarRef} $sideBarWidth={sideBarWidth}>
+                <Sidebar className="sidebar" ref={sidebarRef} $sideBarWidth={sideBarWidth} $darkMode={darkMode}>
                   <div
                     className="sidebar-menu home"
                     onClick={() => {
@@ -310,8 +311,8 @@ function App() {
                     )}
                   </div>
                 </Sidebar>
-                <div className="bar" role="button" tabIndex="0"  ref={barRef} style={{left : `${barPosition}px`}} onClick={() => setBar(!bar)}>
-                    <img src={barArrow} alt="사이드 바 이미지" />
+                <div className="bar" role="button" tabIndex="0" ref={barRef} style={{ left: `${barPosition}px` }} onClick={() => setBar(!bar)}>
+                  <img src={barArrow} alt="사이드 바 이미지" />
                 </div>
 
                 <div className="content-container">

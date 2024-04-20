@@ -13,7 +13,7 @@
     }
 
     .modal .color {
-        left: 63%;
+        left: 37vw;
     }
 
     .modal input {
@@ -24,11 +24,10 @@
 @media (max-width : 600px) {
     .modal {
         width: 80vw;
-        height: 82vw;
     }
 
     .modal .color {
-        left: 60%;
+        left: 28vw;
     }
 
     .modal h1 {
@@ -43,29 +42,55 @@
         position: absolute;
         top: 12%;
     }
+
+    .modal .modal-p1 {
+        font-size: 3vw;
+    }
+
+    .modal .modal-p2 {
+        font-size: 3vw;
+    }
 }
 
 /* 모바일 */
 @media (max-width : 360px) {
     .modal {
-        min-width: 300px;
+        min-width: 10%;
         height: 350px;
     }
 
     .modal .color {
-        left: 60%;
+        position: absolute;
+        top: 20%;
+        left: 1vw;
     }
 
     .modal input {
-        font-size: 10px;
-    }
-
-    .modal .color {
-        left: 30%;
+        font-size: 3vw;
     }
 
     .modal .project-color-tag  {
         position: absolute;
         top: 40px;
+    }
+
+    .modal .create {
+        font-size: 5vw;
+    }
+
+    .modal .cancel {
+        font-size: 5vw;
+    }
+
+    .modal .project-color-tag {
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 12%;
+    }
+
+    .modal .palette img {
+        width: 7vw;
+        height: 7vw;
     }
 }

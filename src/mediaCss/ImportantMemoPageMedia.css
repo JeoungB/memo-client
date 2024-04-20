@@ -15,3 +15,13 @@
         left: 25%;
     }
 }
+
+@media (max-width : 320px) {
+    .important-memo-page .alert {
+        left: 15%;
+    }
+
+    .important-memo-page .alert p {
+        font-size: 7vw;
+    }
+}

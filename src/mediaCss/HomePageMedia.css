@@ -16,26 +16,36 @@
     }
 
     .tag {
-        width: 110vw;
+        width: 100%;
     }
 
     .addmemo {
         position: relative;
-        right: 10%;
+        left: 5%;
     }
 }
 
 @media (max-width : 360px) {
     .content-box .content-container {
-        min-width: 295px;
+        width: 100%;
     }
 
     .tag {
-        width: 600px;
+        width: 100%;
     }
 
     .addmemo {
         position: relative;
-        left: -230px;
+        left: 20%;
+    }
+
+    .none-memo {
+        font-size: 8vw;
+    }
+}
+
+@media (max-width : 255px) {
+    .addmemo {
+        left: 27%;
     }
 }

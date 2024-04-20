@@ -117,7 +117,7 @@ const GroupContents = () => {
             {Array.isArray(groupMemos) && groupMemos.length === 0 ? (
               <div className="contents">
                 <img src={noneMemo} alt="메모 없음" />
-                <p>그룹에 대한 메모가 없어요</p>
+                <p>그룹에 메모가 없어요</p>
                 <p>메모를 추가해 보세요!</p>
                 <button
                   className="addgroup-memo"

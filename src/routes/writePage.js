@@ -25,7 +25,6 @@ const WritePage = (props) => {
   //const [loding, setLoding] = useState(false);
   const darkMode = useSelector((state) => state.darkMode);
   const quillRef = useRef();
-  const titleInputRef = useRef();
   const TEXT_LENGHT = /^.{0,10}$/;
   let dispatch = useDispatch();
   let navigates = useNavigate();
@@ -41,10 +40,6 @@ const WritePage = (props) => {
       setMemoCheck(props.currentMemo.check);
       setMemoImportant(props.currentMemo.important);
     }
-  }, []);
-
-  useEffect(() => {
-    titleInputRef.current.focus();
   }, []);
 
   // const imageHandler = () => {
@@ -214,7 +209,6 @@ const WritePage = (props) => {
             type="text"
             value={title}
             name="title"
-            ref={titleInputRef}
             placeholder="제목을 작성해 주세요 (1 ~ 10자)"
             onChange={(e) => {
               setTitle(e.target.value);
