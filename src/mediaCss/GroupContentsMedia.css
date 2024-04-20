@@ -1,5 +1,5 @@
 @media (max-width : 910px) {
-    .main h2 {
+    .main .title {
         top: 26px;
         font-size: 20px;
     }
@@ -7,7 +7,7 @@
 
 
 @media (max-width : 790px) {
-    .main h2 {
+    .main .title {
         top: 26px;
         font-size: 18px;
     }
@@ -42,7 +42,7 @@
         font-size: 13px;
     }
 
-    .main h2 {
+    .main .title {
         top: 26px;
         font-size: 20px;
     }
@@ -61,7 +61,7 @@
         font-size: 13px;
     }
 
-    .main h2 {
+    .main .title {
         top: 26px;
         font-size: 17px;
     }

@@ -90,6 +90,9 @@ const GroupContents = () => {
                     onClick={(e) => {
                       dispatch(setSelectModal(true));
                     }}
+                    style={{
+                      color : darkMode ? "black" : null
+                    }}
                   >
                     메모 추가
                   </div>
@@ -104,6 +107,9 @@ const GroupContents = () => {
                         dispatch(deleteGroup(currentGroup.id));
                         dispatch(allDeleteGroupMemo(currentGroup.id));
                       }
+                    }}
+                    style={{
+                      color : darkMode ? "black" : null
                     }}
                   >
                     그룹 삭제

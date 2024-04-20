@@ -83,6 +83,9 @@ const ContentPage = () => {
                           setMenu(false);
                         }
                       }}
+                      style={{
+                        color : darkMode ? "black" : null
+                      }}
                     >
                       삭제
                     </p>
@@ -91,6 +94,9 @@ const ContentPage = () => {
                       className="modify"
                       onClick={() => {
                         navigate(`/modify/${currentItem.id}`);
+                      }}
+                      style={{
+                        color : darkMode ? "black" : null
                       }}
                     >
                       수정

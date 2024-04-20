@@ -125,7 +125,7 @@ const HomePage = (props) => {
                       className="memo-color"
                       style={{ backgroundColor: `${memoList.color}` }}
                     ></div>
-                    <h2>{memoList.title}</h2>
+                    <h2 className="title">{memoList.title}</h2>
                     <div
                       className="subtitle"
                       style={{

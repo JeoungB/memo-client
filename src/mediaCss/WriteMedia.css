@@ -5,14 +5,13 @@
         position : relative;
         top : 175px;
         left: 30px;
-        width : 100%;
+        width : 90%;
         height : 100%;
     }
 
     .writepage input {
         width: 400px;
         height: 30px;
-        padding-left: 10px;
         outline: none;
         margin-bottom: 30px;
     }
@@ -34,7 +33,7 @@
     }
 }
 
-@media (max-width : 360px) {
+@media (max-width : 390px) {
 
     .writepage input {
         width: 60vw;
