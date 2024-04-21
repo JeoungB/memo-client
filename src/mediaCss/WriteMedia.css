@@ -33,6 +33,13 @@
     }
 }
 
+@media (max-width : 410px) {
+
+    .writepage .submit {
+        top: 85px;
+    }
+}
+
 @media (max-width : 390px) {
 
     .writepage input {
@@ -53,6 +60,6 @@
 @media (max-width : 340px) {
 
     .writepage .submit {
-        top: 75px;
+        top: 85px;
     }
 }
