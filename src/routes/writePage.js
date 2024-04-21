@@ -5,8 +5,8 @@ import { addMemo } from "../store";
 import { updateMemo } from "../store";
 import { useSelector } from "react-redux";
 import ReactQuill from "react-quill";
-//import axios from "axios";
-//import spinner from "../imgs/Rolling-1s-200px.gif";
+import axios from "axios";
+import spinner from "../imgs/Rolling-1s-200px.gif";
 import "react-quill/dist/quill.snow.css";
 import "../css/write.css";
 import "../mediaCss/WriteMedia.css";
@@ -22,7 +22,7 @@ const WritePage = (props) => {
   const [memoCheck, setMemoCheck] = useState();
   const [memoId, setMemoId] = useState();
   const [memoImportant, setMemoImportant] = useState();
-  //const [loding, setLoding] = useState(false);
+  const [loding, setLoding] = useState(false);
   const darkMode = useSelector((state) => state.darkMode);
   const quillRef = useRef();
   const TEXT_LENGHT = /^.{0,10}$/;
@@ -42,51 +42,51 @@ const WritePage = (props) => {
     }
   }, []);
 
-  // const imageHandler = () => {
-  //   // 이미지 삽입 할 input 생성.
-  //   const input = document.createElement("input");
-  //   input.setAttribute("type", "file");
-  //   input.setAttribute("accept", "image/*");
-  //   input.click();
+  const imageHandler = () => {
+    // 이미지 삽입 할 input 생성.
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
 
-  //   input.addEventListener("change", async () => {
-  //     const file = input.files[0];
-  //     const formData = new FormData();
-  //     // formData는 키-밸류 구조.
-  //     formData.append("img", file);
-  //     try {
-  //       setLoding(true);
-  //       const result = await axios.post("http://localhost:8080/img", formData);
-  //       console.log("result", result);
-  //       if (result) {
-  //         setLoding(false);
-  //       }
-  //       const IMG_URL = result.data.url;
+    input.addEventListener("change", async () => {
+      const file = input.files[0];
+      const formData = new FormData();
+      // formData는 키-밸류 구조.
+      formData.append("img", file);
+      try {
+        setLoding(true);
+        const result = await axios.post("http://port-0-memo-server-1pgyr2mlv9w883k.sel5.cloudtype.app/img", formData);
+        console.log("result", result);
+        if (result) {
+          setLoding(false);
+        }
+        const IMG_URL = `http://port-0-memo-server-1pgyr2mlv9w883k.sel5.cloudtype.app/${result.data.url}`;
 
-  //       // useRef를 사용해 선택된 에디터를 가져옴.
-  //       // getSelection 으로 useRef에 선택된 에디터 영역을 가져옴.
-  //       // insertEmbed : quill 에디터 함수. 이미지 삽입에 사용.
-  //       const editor = quillRef.current.getEditor();
-  //       const range = editor.getSelection();
-  //       editor.insertEmbed(range.index, "image", IMG_URL);
-  //     } catch (error) {
-  //       console.log("이미지 업로드 실패", error);
-  //       setLoding(true);
-  //     }
-  //   });
-  // };
+        // useRef를 사용해 선택된 에디터를 가져옴.
+        // getSelection 으로 useRef에 선택된 에디터 영역을 가져옴.
+        // insertEmbed : quill 에디터 함수. 이미지 삽입에 사용.
+        const editor = quillRef.current.getEditor();
+        const range = editor.getSelection();
+        editor.insertEmbed(range.index, "image", IMG_URL);
+      } catch (error) {
+        console.log("이미지 업로드 실패", error);
+        setLoding(true);
+      }
+    });
+  };
 
   const modules = useMemo(() => {
     return {
       toolbar: {
         container: [
-          //["image"],
+          ["image"],
           [{ header: [1, 2, 3, false] }],
           ["bold", "italic", "underline", "strike", "blockquote"],
         ],
-        //handlers: {
-        //image: imageHandler,
-        //},
+        handlers: {
+        image: imageHandler,
+        },
       },
     };
   }, []);
@@ -236,7 +236,6 @@ const WritePage = (props) => {
               height: "100%",
             }}
           />
-          {/*
               {loding ? (
             <div
               style={{
@@ -260,7 +259,6 @@ const WritePage = (props) => {
               />
             </div>
           ) : null}
-              */}
         </div>
         {props.id === undefined ? (
           <button

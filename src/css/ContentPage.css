@@ -90,6 +90,10 @@
     overflow: auto;
 }
 
+.viwer img {
+    width: 40vw;
+}
+
 .none-content {
     position: absolute;
     top: 50%;
