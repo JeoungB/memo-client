@@ -5,11 +5,11 @@ import { addMemo } from "../store";
 import { updateMemo } from "../store";
 import { useSelector } from "react-redux";
 import ReactQuill from "react-quill";
-import axios from "axios";
 import spinner from "../imgs/Rolling-1s-200px.gif";
 import "react-quill/dist/quill.snow.css";
 import "../css/write.css";
 import "../mediaCss/WriteMedia.css";
+import axios from "axios";
 
 const WritePage = (props) => {
   const [title, setTitle] = useState("");
